@@ -19,7 +19,6 @@ import propTypes from 'prop-types';
 class ShoppingList extends Component {
   componentDidMount() {
     this.props.getItems();
-    this.props.del_Item();
   }
   handleDelete = id=> {
     this.props.del_Item(id);
@@ -49,7 +48,7 @@ class ShoppingList extends Component {
   return(
     <div className = "list_items">
       { Items.length? (<h2> latest items: </h2>):false }
-      <ListGroup className = "List">
+      <ListGroup id= "List">
         { ListItem }
       </ListGroup>
     </div>

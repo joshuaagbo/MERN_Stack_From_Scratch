@@ -20,7 +20,6 @@ export default  (state = initialState, action)=> {
         isLoading: false
       }
     case ADD_ITEM:
-    console.log(action.payload);
       return {
         ...state,
         Items: [action.payload,...state.Items]
