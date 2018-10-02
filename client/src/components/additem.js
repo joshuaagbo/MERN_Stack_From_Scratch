@@ -51,7 +51,7 @@ class Additem extends Component {
   }
   render() {
     return (
-      <div >
+      <div>
         <Button onClick = { this.toggle }
         color = "primary">+</Button>
         <Modal toggle = { this.state.toggle }

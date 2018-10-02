@@ -8,7 +8,8 @@
 		"server": "nodemon server",
 		"client": "npm start --prefix client",
 		"dev": "concurrently \"npm run server\" \"npm run client\"",
-		"install_all": "concurrently \"npm install\" \"npm run client_install \""
+		"install_all": "concurrently \"npm install\" \"npm run client_install \"",
+		"heroku_postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
 	},
 	"author": "gemjosh",
 	"license": "MIT",
