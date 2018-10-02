@@ -47,7 +47,7 @@ class ShoppingList extends Component {
   );
   return(
     <div className = "list_items">
-      { Items.length? (<h2> latest items: </h2>):false }
+      { Items.length? (<h2> latest shoppinglist: </h2>):false }
       <ListGroup id= "List">
         { ListItem }
       </ListGroup>
