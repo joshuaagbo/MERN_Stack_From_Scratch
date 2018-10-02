@@ -1,29 +1,72 @@
-import React, { Component} from 'react';
+import React, {
+  Component
+} from 'react';
 import {
   ListGroupItem,
   ListGroup,
-  Container,
   Button
 } from 'reactstrap';
 
-class Shoppinglist extends Component{
-handleDel = ()=> {
-  const { Listitems } = this.props;
-  this.props.onDelete(Listitems);
-}
-render() {
+import {
+  connect
+} from 'react-redux';
+import {
+  getItems,
+  del_Item
+} from '../actions/itemAction';
+import propTypes from 'prop-types';
+
+class ShoppingList extends Component {
+  componentDidMount() {
+    this.props.getItems();
+    this.props.del_Item();
+  }
+  handleDelete = id=> {
+    this.props.del_Item(id);
+  }
+  render() {
+    const { Items } = this.props.item;
+    const ListItem = Items.length?
+      (
+       Items.map(({ item,_id })=> (
+        <ListGroupItem key = { _id } className ="card p-0">
+         <div className ="card-body">
+         { item }
+         </div>
+        <div className = "card-footer p-0">
+          <Button className = "btn-danger float-right btn-sm mr-1" onClick = { this.handleDelete.bind(this,_id) } >
+          &times;
+          </Button>
+          <div className = "clearfix"></div>
+        </div>
+      </ListGroupItem >
+    ))
+  ): (
+    <div>
+      <p> you have no item left....! </p>
+    </div>
+  );
   return(
-    <ListGroup>
-      <Container>
-        <ListGroupItem className ="mb-2">
-          {this.props.Listitems}
-          <Button className ="float-right btn-danger" onClick = {this.handleDel}> &times; </Button>
-          <div className ="clearfix"></div>
-        </ListGroupItem>
-      </Container>
-    </ListGroup>
+    <div className = "list_items">
+      { Items.length? (<h2> latest items: </h2>):false }
+      <ListGroup className = "List">
+        { ListItem }
+      </ListGroup>
+    </div>
   )
 }
 }
+ShoppingList.propTypes = {
+  getItems: propTypes.func.isRequired,
+  item: propTypes.object.isRequired,
+  del_Item: propTypes.func.isRequired
+}
 
-export default Shoppinglist;
+const mapStateToProps = (state) => ({
+  item: state.item
+});
+
+export default connect(mapStateToProps, {
+  getItems,
+  del_Item
+})(ShoppingList);

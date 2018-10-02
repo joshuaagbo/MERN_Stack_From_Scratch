@@ -1,5 +1,5 @@
 import React, { Component} from 'react';
-import Addshoplist from './addshoplist';
+// import Addshoplist from './addshoplist';
 import {
     Collapse,
     Navbar,
@@ -25,15 +25,15 @@ class AppNavbar extends Component {
     }
     render() {
       return(
-      <div>
+      <div className="Appnavbar">
           <Navbar color="dark" dark expand="sm" className ="mb-5">
               <Container>
                   <NavbarBrand href = "/" className="text-capitalize"> shoppingList</NavbarBrand>
-                  <NavbarToggler onClick = {this.toggle} />
-                  <Collapse isOpen={this.state.isOpen} navbar>
+                  <NavbarToggler onClick = { this.toggle } />
+                  <Collapse isOpen={ this.state.isOpen } navbar>
                       <Nav className = "ml-auto" navbar>
                           <NavItem>
-                              <NavLink href="http://www.github.com/therealgemjosh" className="text-capitalize">
+                              <NavLink href="https://www.github.com/therealgemjosh" className="text-capitalize">
                               github
                               </NavLink>
                           </NavItem>
@@ -41,7 +41,6 @@ class AppNavbar extends Component {
                   </Collapse>
               </Container>
           </Navbar>
-      <Addshoplist />
       </div>
     );
   }

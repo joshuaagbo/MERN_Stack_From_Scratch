@@ -1,4 +1,27 @@
-.Projectfooter{
+.Projectfooter {
   padding: 20px 0px;
   margin-top: 20px;
+}
+
+.fade-enter {
+  opacity: 0.01;
+}
+
+.fade-enter-active {
+  opacity: 1;
+  transition: opacity 1000ms ease-in;
+}
+
+.fade-exit {
+  opacity: 1;
+}
+
+.fade-exit-active {
+  opacity: 0.01;
+  transition: opacity 100ms ease-out;
+}
+.list_items .List{
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  grid-gap: 10px;
 }

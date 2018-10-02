@@ -10,10 +10,10 @@ class Projectfooter extends Component {
     return(
       <div className ="Projectfooter bg-dark text-white">
         <Container>
-          <Button className ="btn-outline-primary"> follow &raquo;</Button>
+          <Button className ="btn-outline-primary"> follow &gt;</Button>
           <br />
           <br />
-          
+
           <p>
           copyright &copy; 2018, @gemjosh.codes.it.
         </p>

@@ -1,21 +1,23 @@
 {
-  "name": "mern_stack",
-  "version": "1.0.0",
-  "description": "building a shopping list with the MERN STACK",
-  "main": "server",
-  "scripts": {
-    "client-install" : "npm install --prefix client",
-    "server": "nodemon server",
-    "client": "npm start --prefix client",
-    "dev" : "concurrently \"npm run server\" \"npm run client\""
-  },
-  "author": "gemjosh",
-  "license": "MIT",
-  "dependencies": {
-    "body-parser": "^1.18.3",
-    "concurrently": "^3.6.0",
-    "create-react-app": "^1.5.2",
-    "express": "^4.16.3",
-    "mongoose": "^5.2.4"
-  }
+	"name": "mern_stack",
+	"version": "1.0.0",
+	"description": "building a shopping list with the MERN STACK",
+	"main": "server",
+	"scripts": {
+		"client_install": "npm install --prefix client",
+		"server": "nodemon server",
+		"client": "npm start --prefix client",
+		"dev": "concurrently \"npm run server\" \"npm run client\"",
+		"install_all": "concurrently \"npm install\" \"npm run client_install \""
+	},
+	"author": "gemjosh",
+	"license": "MIT",
+	"dependencies": {
+		"axios": "^0.18.0",
+		"body-parser": "^1.18.3",
+		"concurrently": "^3.6.0",
+		"create-react-app": "^1.5.2",
+		"express": "^4.16.3",
+		"mongoose": "^5.2.4"
+	}
 }
