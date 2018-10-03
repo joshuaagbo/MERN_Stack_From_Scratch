@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import {
-  Container,
-  Button
-
+  Container
 }from 'reactstrap';
 
 class Projectfooter extends Component {
@@ -10,10 +8,9 @@ class Projectfooter extends Component {
     return(
       <div className ="Projectfooter bg-dark text-white">
         <Container>
-          <Button className ="btn-outline-primary"> follow &gt;</Button>
+          <a className ="btn btn-outline-primary btn-lg"> follow &gt;</a>
           <br />
           <br />
-
           <p>
           copyright &copy; 2018, @gemjosh.codes.it.
         </p>
