@@ -10,12 +10,20 @@ module.exports = (app) => {
     });
     // @ POST route;
     app.post('/api/item_add', (req, res) => {
-        const newItem = new items({
-            item: req.body.item
-        });
-        newItem.save()
-        .then((data) => res.json(data))
-        .catch(err => console.log(err));
+      items.find()
+        .then(item=> {
+          if(item.length >= 10){
+            console.log('limit exceeded!')
+            return null
+          }else {
+            const newItem = new items({
+                item: req.body.item
+            });
+              newItem.save()
+              .then((data) => res.json(data))
+              .catch(err => console.log(err));
+          }
+        })
     });
     // @ DELETE route;
     app.delete('/api/item_delete/:id', (req, res) => {

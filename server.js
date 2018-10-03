@@ -1,6 +1,7 @@
 const express = require('express');
 const bodyparse = require('body-parser');
 const mongoose = require('mongoose');
+const path = require('path');
 const port = process.env.PORT || 8080;
 const route = require('./route/controller');
 const DB = require('./config/database').mongoURI;

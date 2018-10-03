@@ -38,13 +38,19 @@ class Additem extends Component {
   }
   handleSubmit = (e) => {
     e.preventDefault();
+    const {Items} = this.props.item;
     const item = {
       item: this.state.name
     }
     if(!this.state.name){
       alert('make sure the filed is NOT EMPTY');
       this.toggle();
-    }else{
+      return false;
+    }else if(Items.length >= 10){
+      this.toggle();
+      setTimeout(()=> alert('limit reached...! \nCan\'t add more than 10'),2000);
+      return false;
+    }else {
       this.props.item_add(item);
       this.toggle();
     }
@@ -95,8 +101,14 @@ class Additem extends Component {
 }
 
 Additem.propTypes = {
-  item_add: propTypes.func.isRequired
+  item_add: propTypes.func.isRequired,
+  item: propTypes.object.isRequired
 }
-export default connect(null, {
+const mapStateToProps =(state)=>(
+  {
+    item:state.item
+  }
+)
+export default connect(mapStateToProps, {
   item_add
 })(Additem);

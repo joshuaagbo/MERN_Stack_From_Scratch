@@ -40,14 +40,15 @@ class ShoppingList extends Component {
         </div>
       </ListGroupItem >
     ))
-  ): (
+  ):
+  (
     <div>
       <p> you have no item left....! </p>
     </div>
   );
   return(
     <div className = "list_items">
-      { Items.length? (<h2> latest shoppinglist: </h2>):false }
+      { Items.length? (<h2> latest shoppinglist: </h2>): false }
       <ListGroup id= "List">
         { ListItem }
       </ListGroup>
