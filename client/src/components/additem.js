@@ -53,6 +53,7 @@ class Additem extends Component {
     }else {
       this.props.item_add(item);
       this.toggle();
+      setTimeout(()=> alert('new list was added'),2000)
     }
   }
   render() {
